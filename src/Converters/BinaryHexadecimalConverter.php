@@ -11,9 +11,9 @@ class BinaryHexadecimalConverter implements BinaryConverter
         return $type == 'hex';
     }
 
-    public function read(string $type, int $length, $value): string
+    public function read(string $type, $value): string
     {
-        return hexdec(bin2hex($value));
+        return bin2hex($value);
     }
 
     public function write(string $type, int $length, $value): string

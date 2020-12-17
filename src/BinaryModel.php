@@ -4,7 +4,7 @@ namespace Typiqally\Binary;
 
 abstract class BinaryModel
 {
-    public array $fields = [];
+    protected array $fields = [];
 
     private array $properties = [];
 
@@ -26,6 +26,14 @@ abstract class BinaryModel
     public function __set($name, $value)
     {
         $this->properties[$name] = $value;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
     }
 
     public function __toString(): string

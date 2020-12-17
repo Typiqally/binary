@@ -11,7 +11,7 @@ class BinaryNumericConverter implements BinaryConverter
         return $type == 'numeric';
     }
 
-    public function read(string $type, int $length, $value)
+    public function read(string $type, $value)
     {
         return hexdec(bin2hex($value));
     }

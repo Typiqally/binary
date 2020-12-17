@@ -12,9 +12,9 @@ class BinaryDateTimeConverter implements BinaryConverter
         return $type == 'dateTime';
     }
 
-    public function read(string $type, int $length, $value): DateTime
+    public function read(string $type, $value): DateTime
     {
-        $epoch = dechex(bin2hex($value));
+        $epoch = hexdec(bin2hex($value));
 
         return new DateTime("@$epoch");
     }

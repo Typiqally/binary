@@ -12,7 +12,7 @@ class BinaryRawConverter implements BinaryConverter
         return $type == 'raw';
     }
 
-    public function read(string $type, int $length, $value)
+    public function read(string $type, $value)
     {
         return $value;
     }
